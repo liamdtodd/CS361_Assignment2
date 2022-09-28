@@ -12,6 +12,8 @@
 using namespace std;
 
 int main() {
+	int rand_num;
+
 	//read from image-service.txt for random number
 
 	if (rand_num > 5) 
