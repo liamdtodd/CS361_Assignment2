@@ -8,13 +8,25 @@
 #include <fstream>
 #include <cstdlib>
 #include <ctime>
+#include <chrono>
+#include <thread>
 
 using namespace std;
+using namespace chrono;
+using namespace this_thread;
 
 int main() {
+	sleep_for(seconds(10));
+
 	int rand_num;
+	fstream readfile;
 
 	//read from image-service.txt for random number
+	if (readfile.is_open())
+		readfile.close();
+
+	readfile.open("image-service.txt", ios::in);
+	readfile >> rand_num;
 
 	if (rand_num > 5) 
 		rand_num = rand_num % 5;
