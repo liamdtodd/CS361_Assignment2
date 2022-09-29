@@ -17,7 +17,7 @@ using namespace chrono;
 using namespace this_thread;
 
 int main() {
-	sleep_for(seconds(3));
+	//sleep_for(seconds(3));
 
 	srand(time(NULL));
 
@@ -41,7 +41,7 @@ int main() {
 	readfile.open("prng-service.txt", ios::out | ios::trunc);
 	readfile.close();			//deleting 'run' from prng-service.txt
 
-	sleep_for(seconds(3));
+	//sleep_for(seconds(3));
 
 	if (writefile.is_open())
 		writefile.close();
