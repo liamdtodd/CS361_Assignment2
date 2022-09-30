@@ -35,7 +35,7 @@ int string_to_int(string text) {
 }
 
 int main() {
-	sleep_for(seconds(6));
+	sleep_for(seconds(15));
 
 	int rand_num;
 	string rand;
@@ -50,7 +50,6 @@ int main() {
 	getline(readfile, rand);
 	rand_num = string_to_int(rand);
 	readfile.close();
-	cout << rand_num << endl;
 
 	if (rand_num > 5) 
 		rand_num = rand_num % 5;
@@ -61,6 +60,8 @@ int main() {
 	writefile.open("image-service.txt", ios::out);
 
 	for (int x = 0; x < 5; x++) {
+		if (x == 0)
+			writefile << "./image/image1.jpg" << endl;
 		if (x == rand_num) 
 			writefile << "./images/image" << rand_num << ".jpg" << endl;
 	}
