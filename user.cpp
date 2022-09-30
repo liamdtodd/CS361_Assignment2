@@ -52,24 +52,25 @@ int main () {
 	}
 	writefile.close();
 
-	sleep_for(seconds(5));
+	sleep_for(seconds(10));
 
 	readfile.open("prng-service.txt", ios::in);
 	getline(readfile, rand);
 	rand_num = string_to_int(rand);
 	readfile.close();
 
-	sleep_for(seconds(5));
+	//sleep_for(seconds(5));
 
 	writefile2.open("image-service.txt", ios::out);
 	writefile2 << rand_num << endl;
 	writefile2.close();
 
-	sleep_for(seconds(3));
+	sleep_for(seconds(10));
 	readfile.open("image-service.txt", ios::in);
 	getline(readfile, path);
-	cout << path << endl;
 	readfile.close();
+
+	cout << path << endl;
 
 	return 0;
 }
